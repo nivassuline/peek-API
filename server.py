@@ -25,6 +25,3 @@ def payment():
     return intent.client_secret
     
 
-if __name__ == '__main__':
-    app.run(port='8080')
-
