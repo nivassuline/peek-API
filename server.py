@@ -12,8 +12,8 @@ bcrypt = Bcrypt(app)
 stripe.api_key = "sk_test_51OTRWYAXdYT3W3LFoxV2uHrrbLeelc9k5c8UvTCV21I9wcAJqKkvA0jIrZv9mQP4wPsgHdptOsjmq6JYmBcXCPPO00a0eZwUwA"
 
 
-@app.route("/v1/payment", methods=['GET'])
-def payment():
+@app.route("/api/secret", methods=['GET'])
+def secret():
     intent = stripe.PaymentIntent.create(
         amount=1099,
         currency="usd",
@@ -23,7 +23,4 @@ def payment():
     print(intent.client_secret)
     
     return jsonify(intent.client_secret)
-
-
-#Asdasd
-
+    
